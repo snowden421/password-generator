@@ -4,9 +4,9 @@
 function generatePassword() {
   var passwordShown = "";
   var passwordLength = 0;
-  var OptionLowerCase = false,
-  var OptionUpperCase = false,
-  var OptionNumeric = false,
+  var OptionLowerCase = false;
+  var OptionUpperCase = false;
+  var OptionNumeric = false;
   var OptionSpecial = false;
 
   // password length prompt
@@ -30,13 +30,25 @@ function generatePassword() {
     ) {
       return passwordShown = createPassword(passwordLength, [OptionLowerCase, OptionUpperCase, OptionNumeric, OptionSpecial]);
     }
+
+    // if no character types selected
     else {
       window.alert("Please pick at least one character type.");
     }
   }
+
+  // if password length is not between 8 and 128
   else {
     window.alert("You have chosen an invalid password length. Please try again.");
   }
+}
+
+function createPassword(passwordLength, passwordOptions) {
+  var generatePassword = "";
+  const lowerCaseSet = "abcdefghijklmnopqrstuvwxyz";
+  const upperCaseSet = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+  const numberSet = "1234567890";
+  const specialSet = "`~!@#$%^&*()_-=+[{]}:;'<>?/\|";
 }
 
 // Get references to the #generate element
